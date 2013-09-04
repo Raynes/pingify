@@ -7,15 +7,13 @@
 (defn get-config []
   (edn/read-string (slurp "config.clj")))
 
-(defn send-email [{:keys [user nick context message]}]
+(defn send-email [{:keys [user context message]}]
   (let [config (get-config)
         email-config (:email config)]
     (email/send-message email-config
                         {:from (:user email-config)
                          :to (config user)
-                         :subject (if (= nick context)
-                                    nick
-                                    (format "%s/%s" nick context))
+                         :subject context
                          :body message})))
 
 (defroutes api-routes

@@ -7,7 +7,7 @@ which in turn triggers my pebble's notification stuff so I get IRC pings as watc
 
 ## Usage
 
-Just `lein ring server`. Then you can hit `localhost:6556/?user=SomeUser&context=SomeChannelOrQueryWindow&message=ohaithere` and such.
+Just `lein ring server-headless`. Then you can hit `localhost:6556/?user=SomeUser&context=SomeChannelOrQueryWindow&message=ohaithere` and such.
 Note that the 'user' param is looked up in the configuration map -- the email address associated
 with that key is where the email is sent to.
 
